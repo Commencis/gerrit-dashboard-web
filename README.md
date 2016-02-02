@@ -4,7 +4,7 @@ Gerrit Dashboard Web project that shows metrics from [Gerrit Dashboard Server](h
 
 ## License
 
-Gerrit Dashboard Web
+Gerrit Dashboard Web  
 Copyright © 2016 Monitise MEA
 
 Distributed under the Apache License, Version 2.0
