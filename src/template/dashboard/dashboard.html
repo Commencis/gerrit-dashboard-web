@@ -1,0 +1,20 @@
+<div class="row" ng-controller="dashboardController">
+    <div class="dashboard-item col-md-4">
+        <div class="dash">
+            <span class="dash-info">Total Number Of Project</span>
+            <h1><span class="label label-info" ng-bind="numberOfProjects"></span></h1>
+        </div>
+    </div>
+    <div class="dashboard-item col-md-4">
+        <div class="dash">
+            <span class="dash-info">Number of Open Reviews</span>
+            <h1><span class="label label-info" ng-bind="numberOfOpenReview"></span></h1>
+        </div>
+    </div>
+    <div class="dashboard-item col-md-4">
+        <div class="dash">
+            <span class="dash-info">Average Review Interval</span>
+            <h1><span class="label label-info" ng-bind="averageReviewInterval"></span></h1>
+        </div>
+    </div>
+</div>

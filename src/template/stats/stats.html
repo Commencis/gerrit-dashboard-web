@@ -1,0 +1,67 @@
+<div ng-controller="statsController">
+    <!-- Stats navigation-->
+    <div class="row">
+        <div class="stat-navigate">
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success" ng-click="getStats('TODAY')">TODAY</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success" ng-click="getStats('THIS_WEEK')">THIS WEEK</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success" ng-click="getStats('THIS_MONTH')">THIS MONTH</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success" ng-click="getStats('LAST_30_DAYS')">LAST 30 DAYS
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success" ng-click="getStats('LAST_6_MONTHS')">LAST 6 MONTHS
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stats info -->
+    <div class="row">
+        <div class="number-of-commits col-md-12">
+            <h3>Number Of Commits <span class="badge" id="noc-span" ng-bind="stats.numberOfCommits"></span></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="stats-item col-md-4">
+            <div class="stats">
+                <span class="stats-info">Most Committed Projects</span>
+                <ul class="stats-list-wrapper list-group">
+                    <li class="list-group-item" ng-repeat="project in stats['mostCommittedProjects']">
+                        <span ng-bind="project.name"></span>
+                        <span class="badge" ng-bind="project.commits"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stats-item col-md-4">
+            <div class="stats">
+                <span class="stats-info">Top Committers</span>
+                <ul class="stats-list-wrapper list-group">
+                    <li class="list-group-item" ng-repeat="committer in stats['topCommitters']">
+                        <span ng-bind="committer.name"></span>
+                        <span class="badge" ng-bind="committer.commits"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stats-item col-md-4">
+            <div class="stats">
+                <span class="stats-info">Top Reviewers</span>
+                <ul class="stats-list-wrapper list-group">
+                    <li class="list-group-item" ng-repeat="reviewer in stats['topReviewers']">
+                        <span ng-bind="reviewer.name"></span>
+                        <span class="badge" ng-bind="reviewer.reviews"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+@dashboard-height: 200px;
+@dashboard-margin-top: 10px;
+@dashboard-margin-bottom: 10px;
+@dashboard-item-border-radius: 10px;
+@dashboard-info-font-size: 20px;
+
+.dashboard-item-container-border (@radius) {
+  border-radius: @radius @radius @radius @radius;
+}
+
+.dash {
+  background-color: @dashboard-background-color;
+  height: @dashboard-height;
+  margin-top: @dashboard-margin-top;
+  margin-bottom: @dashboard-margin-bottom;
+  text-align: center;
+  .dashboard-item-container-border(@dashboard-item-border-radius)
+}
+
+.dash-info {
+  font-size: @dashboard-info-font-size;
+  text-align: center;
+}
+
+.dashboard-item {
+  height: auto;
+  background-color: @color1;
+}
+
+.badge {
+  background-color: @color3;
+}
+
+.label-info {
+  background-color: @color3;
+  font-size: larger;
+}

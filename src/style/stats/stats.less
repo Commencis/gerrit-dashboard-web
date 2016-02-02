@@ -1,0 +1,54 @@
+@stats-margin-top: 10px;
+@stats-margin-bottom: 10px;
+@stats-min-heigth: 200px;
+@stats-background-color: whitesmoke;
+@stats-border-radius: 10px;
+@stats-info-font-size: 25px;
+@stats-navigate-margin-top: 10px;
+@noc-span-font-size:30px;
+@number-of-commits-margin-bottom: 10px;
+@number-of-commits-margin-top: 5px;
+@stats-list-wrapper-height: 290px;
+
+.stats-border-radius (@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+}
+
+.stats {
+  background-color: @stats-background-color;
+  margin-top: @stats-margin-top;
+  margin-bottom: @stats-margin-bottom;
+  text-align: center;
+  .stats-border-radius(@stats-border-radius);
+}
+
+.stats-list-wrapper {
+  height: @stats-list-wrapper-height;
+  overflow-y: auto;
+}
+
+.stats-item {
+  height: auto;
+  background-color: #74AFAD;
+}
+
+.number-of-commits {
+  text-align: center;
+  color: whitesmoke;
+  background-color: @color2;
+  margin-bottom: @number-of-commits-margin-bottom;
+  margin-top: @number-of-commits-margin-top;
+}
+
+.stats-info {
+  font-size: @stats-info-font-size;
+
+}
+.stat-navigate {
+  margin-top: @stats-navigate-margin-top;
+}
+
+#noc-span {
+  font-size: @noc-span-font-size;
+}
