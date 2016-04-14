@@ -10,6 +10,7 @@ var proxy = require("proxy-middleware");
 var url = require("url");
 var args = require("yargs").argv;
 var autoprefixer = require("gulp-autoprefixer");
+var shell = require("gulp-shell");
 
 var sourcePath = require("./config/paths/source-path");
 var libPath = require("./config/paths/lib-path");
@@ -114,3 +115,35 @@ gulp.task("dev-live", ["concat-sources", "build-less", "copy-lib-css", "copy", "
 gulp.task("dist-test", ["lint", "concat-sources", "build-less", "copy-lib-css", "copy"]);
 
 gulp.task("build", ["concat-sources", "build-less", "copy-lib-css", "copy", "autoprefixer"]);
+
+gulp.task("docker", ["lint", "clean", "build"], function () {
+    var email = process.env.DOCKER_EMAIL;
+    var username = process.env.DOCKER_USERNAME;
+    var password = process.env.DOCKER_PASSWORD;
+    var imageName = process.env.DOCKER_IMAGE_NAME || "gerritdashboard-web";
+    var version = pkg.version;
+
+    if (!email) {
+        throw new Error("DOCKER_EMAIL undefined!");
+    }
+
+    if (!username) {
+        throw new Error("DOCKER_USERNAME undefined!");
+    }
+
+    if (!password) {
+        throw new Error("DOCKER_PASSWORD undefined!");
+    }
+
+    return shell.task([
+        `docker build -t ${imageName}:${version} .`,
+        `docker tag ${imageName}:${version} ${imageName}:latest`,
+        `docker login -e="${email}" -u="${username}" -p="${password}"`,
+        `docker push ${imageName}:${version}`,
+        `docker push ${imageName}:latest`,
+    ], {
+        "verbose": true
+    })();
+});
+
+gulp.task("default", ["clean", "build"]);

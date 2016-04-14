@@ -1,10 +1,12 @@
 # Gerrit Dashboard Web
 
+![Travis CI Build Status](https://travis-ci.org/monitise-mea/gerrit-dashboard-web.svg)
+
 Gerrit Dashboard Web project that shows metrics from [Gerrit Dashboard Server](https://github.com/monitise-mea/gerrit-dashboard-server).
 
 ## License
 
-Gerrit Dashboard Web  
+Gerrit Dashboard Web
 Copyright © 2016 Monitise MEA
 
 Distributed under the Apache License, Version 2.0

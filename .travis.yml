@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+    - "5"
+before_script:
+    - npm install -g gulp bower
+sudo: required
+services:
+    - docker
+script:
+    - bower install
+    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] || gulp'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || gulp docker'
