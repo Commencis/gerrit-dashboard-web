@@ -14,9 +14,9 @@ var shell = require("gulp-shell");
 
 var sourcePath = require("./config/paths/source-path");
 var libPath = require("./config/paths/lib-path");
-var appPath = libPath.concat(sourcePath);
-
 var libCssFiles = require("./config/paths/lib-css-list.js");
+var appPath = libPath.concat(sourcePath);
+var pkg = require("./package");
 
 gulp.task("clean", function (cb) {
     del([
@@ -78,8 +78,9 @@ gulp.task("copy-index", function () {
     return gulp.src("./index.html")
         .pipe(gulp.dest("dev/src/"));
 });
+
 gulp.task("copy-asset", function () {
-    gulp.src("./asset/**")
+    return gulp.src("./asset/**")
         .pipe(gulp.dest("./dev/src/asset/"));
 });
 
@@ -140,7 +141,7 @@ gulp.task("docker", ["lint", "clean", "build"], function () {
         `docker tag ${imageName}:${version} ${imageName}:latest`,
         `docker login -e="${email}" -u="${username}" -p="${password}"`,
         `docker push ${imageName}:${version}`,
-        `docker push ${imageName}:latest`,
+        `docker push ${imageName}:latest`
     ], {
         "verbose": true
     })();
