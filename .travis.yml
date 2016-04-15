@@ -8,5 +8,5 @@ services:
     - docker
 script:
     - bower install
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] || gulp --env=prod'
-    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || gulp docker --env=prod'
+    - gulp --env=prod
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || gulp docker'

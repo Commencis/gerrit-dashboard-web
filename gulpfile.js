@@ -19,9 +19,7 @@ var appPath = libPath.concat(sourcePath);
 var pkg = require("./package");
 
 gulp.task("clean", function () {
-    del.sync([
-        "dev"
-    ]);
+    return del.sync(["dev"]);
 });
 
 gulp.task("lint", function () {
@@ -117,7 +115,7 @@ gulp.task("dist-test", ["lint", "concat-sources", "build-less", "copy-lib-css", 
 
 gulp.task("build", ["concat-sources", "build-less", "copy-lib-css", "copy", "autoprefixer"]);
 
-gulp.task("docker", ["lint", "clean", "build"], function () {
+gulp.task("docker", function () {
     var email = process.env.DOCKER_EMAIL;
     var username = process.env.DOCKER_USERNAME;
     var password = process.env.DOCKER_PASSWORD;
@@ -142,9 +140,7 @@ gulp.task("docker", ["lint", "clean", "build"], function () {
         `docker login -e="${email}" -u="${username}" -p="${password}"`,
         `docker push ${imageName}:${version}`,
         `docker push ${imageName}:latest`
-    ], {
-        "verbose": true
-    })();
+    ])();
 });
 
 gulp.task("default", ["clean", "build"]);
