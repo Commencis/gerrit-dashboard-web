@@ -77,12 +77,12 @@ gulp.task("copy-index", function () {
         .pipe(gulp.dest("dev/src/"));
 });
 
-gulp.task("copy-asset", function () {
-    gulp.src("./asset/**")
-        .pipe(gulp.dest("./dev/src/asset/"));
+gulp.task("copy-assets", function () {
+    gulp.src("./assets/**")
+        .pipe(gulp.dest("./dev/src/assets/"));
 });
 
-gulp.task("copy", ["copy-index", "copy-template", "copy-asset"]);
+gulp.task("copy", ["copy-index", "copy-template", "copy-assets"]);
 
 gulp.task("browser-sync", function () {
     browserSync.init(
