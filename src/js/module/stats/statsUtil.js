@@ -3,7 +3,7 @@ angular.module("gerritDashboard.stats").service("statsUtil",
         function () {
             "use strict";
 
-            var isInMap = function(map, key) {
+            function isInMap(map, key) {
                 return Object.keys(map).indexOf(key) > -1;
             };
 
@@ -11,21 +11,21 @@ angular.module("gerritDashboard.stats").service("statsUtil",
                 var avgMergeTimeProjectMap = {};
                 var avgFirstReviewProjectMap = {};
 
-                avgMergeTimeList.forEach(function(o, i) {
-                    avgMergeTimeProjectMap[o.Project] = o.AvgMergeDuration.toFixed(2);
+                avgMergeTimeList.forEach(function(project) {
+                    avgMergeTimeProjectMap[project.Project] = project.AvgMergeDuration.toFixed(2);
                 });
 
-                avgFirstReviewTimeList.forEach(function(o, i) {
-                    avgFirstReviewProjectMap[o.Project] = o.AvgFirstReviewDuration.toFixed(2);
+                avgFirstReviewTimeList.forEach(function(project) {
+                    avgFirstReviewProjectMap[project.Project] = project.AvgFirstReviewDuration.toFixed(2);
                 });
 
-                projects.forEach(function(o, i) {
-                    if (isInMap(avgMergeTimeProjectMap, o.name)) {
-                        o.avgMergeTime = avgMergeTimeProjectMap[o.name];
+                projects.forEach(function(project) {
+                    if (isInMap(avgMergeTimeProjectMap, project.name)) {
+                        project.avgMergeTime = avgMergeTimeProjectMap[project.name];
                     }
 
-                    if (isInMap(avgFirstReviewProjectMap, o.name)) {
-                        o.avgFirstReviewTime = avgFirstReviewProjectMap[o.name];
+                    if (isInMap(avgFirstReviewProjectMap, project.name)) {
+                        project.avgFirstReviewTime = avgFirstReviewProjectMap[project.name];
                     }
                 });
             };

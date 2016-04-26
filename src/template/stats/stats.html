@@ -23,26 +23,28 @@
             </div>
         </div>
     </div>
+
     <!-- Stats info -->
     <div class="row">
         <div class="number-of-commits col-md-12">
-            <h3>Number Of Commits <span class="badge" id="noc-span" ng-bind="stats.numberOfCommits"></span></h3>
+            <h3>Number Of Commits <span class="badge" id="noc-span" ng-bind="::stats.numberOfCommits"></span></h3>
         </div>
     </div>
+
     <div class="row">
         <div class="stats-item col-md-4">
             <div class="stats">
                 <span class="stats-info">Most Committed Projects</span>
                 <ul class="stats-list-wrapper list-group">
-                    <li class="list-group-item" ng-repeat="project in stats['mostCommittedProjects']">
+                    <li class="list-group-item" ng-repeat="project in ::stats['mostCommittedProjects']">
                         <span
-                            uib-popover-template="projectsPopup.templateUrl"
+                            uib-popover-template="::projectsPopup.templateUrl"
                             popover-trigger="mouseenter"
                             popover-append-to-body="true"
-                            popover-title={{reviewer.name}}
+                            popover-title={{::reviewer.name}}
                             popover-placement="auto left"
-                            ng-bind="project.name"></span>
-                        <span class="badge" ng-bind="project.commits"></span>
+                            ng-bind="::project.name"></span>
+                        <span class="badge" ng-bind="::project.commits"></span>
                     </li>
                 </ul>
             </div>
@@ -51,9 +53,9 @@
             <div class="stats">
                 <span class="stats-info">Top Committers</span>
                 <ul class="stats-list-wrapper list-group">
-                    <li class="list-group-item" ng-repeat="committer in stats['topCommitters']">
-                        <span ng-bind="committer.name"></span>
-                        <span class="badge" ng-bind="committer.commits"></span>
+                    <li class="list-group-item" ng-repeat="committer in ::stats['topCommitters']">
+                        <span ng-bind="::committer.name"></span>
+                        <span class="badge" ng-bind="::committer.commits"></span>
                     </li>
                 </ul>
             </div>
@@ -62,15 +64,15 @@
             <div class="stats">
                 <span class="stats-info">Top Reviewers</span>
                 <ul class="stats-list-wrapper list-group">
-                    <li class="list-group-item" ng-repeat="reviewer in stats['topReviewers']">
+                    <li class="list-group-item" ng-repeat="reviewer in ::stats['topReviewers']">
                         <span
-                            uib-popover-template="reviewerPopup.templateUrl"
+                            uib-popover-template="::reviewerPopup.templateUrl"
                             popover-trigger="mouseenter"
                             popover-append-to-body="true"
-                            popover-title={{reviewer.name}}
+                            popover-title={{::reviewer.name}}
                             popover-placement="auto left"
-                            ng-bind="reviewer.name"></span>
-                        <span class="badge" ng-bind="reviewer.reviews"></span>
+                            ng-bind="::reviewer.name"></span>
+                        <span class="badge" ng-bind="::reviewer.reviews"></span>
                     </li>
                 </ul>
             </div>
