@@ -35,7 +35,13 @@
                 <span class="stats-info">Most Committed Projects</span>
                 <ul class="stats-list-wrapper list-group">
                     <li class="list-group-item" ng-repeat="project in stats['mostCommittedProjects']">
-                        <span ng-bind="project.name"></span>
+                        <span
+                            uib-popover-template="projectsPopup.templateUrl"
+                            popover-trigger="mouseenter"
+                            popover-append-to-body="true"
+                            popover-title={{reviewer.name}}
+                            popover-placement="auto left"
+                            ng-bind="project.name"></span>
                         <span class="badge" ng-bind="project.commits"></span>
                     </li>
                 </ul>
@@ -57,7 +63,13 @@
                 <span class="stats-info">Top Reviewers</span>
                 <ul class="stats-list-wrapper list-group">
                     <li class="list-group-item" ng-repeat="reviewer in stats['topReviewers']">
-                        <span ng-bind="reviewer.name"></span>
+                        <span
+                            uib-popover-template="reviewerPopup.templateUrl"
+                            popover-trigger="mouseenter"
+                            popover-append-to-body="true"
+                            popover-title={{reviewer.name}}
+                            popover-placement="auto left"
+                            ng-bind="reviewer.name"></span>
                         <span class="badge" ng-bind="reviewer.reviews"></span>
                     </li>
                 </ul>
