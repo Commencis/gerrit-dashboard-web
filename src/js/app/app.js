@@ -1,6 +1,7 @@
 angular.module("gerritDashboard",
     [
         "ui.router",
+        "ui.bootstrap",
         "gerritDashboard.footer",
         "gerritDashboard.dashboard",
         "gerritDashboard.stats",

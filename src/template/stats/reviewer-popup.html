@@ -1,0 +1,51 @@
+<div class="reviewer-popup">
+    <h4 class="text-center">Projects Reviewed</h4>
+
+    <table class="small table table-condensed table-striped">
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="review in ::reviewer['projectReviews']">
+                <td ng-bind="::review.projectName"></td>
+                <td class="text-center" ng-bind="::review.reviewCount"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4 class="text-center">Scores</h4>
+
+    <table class="small table table-condensed table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">Score</th>
+                <th class="text-center">Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">-2</td>
+                <td class="text-center" ng-bind="::reviewer.scores['-2']"></td>
+            </tr>
+            <tr>
+                <td class="text-center">-1</td>
+                <td class="text-center" ng-bind="::reviewer.scores['-1']"></td>
+            </tr>
+            <tr>
+                <td class="text-center">-0</td>
+                <td class="text-center" ng-bind="::reviewer.scores['0']"></td>
+            </tr>
+            <tr>
+                <td class="text-center">+1</td>
+                <td class="text-center" ng-bind="::reviewer.scores['1']"></td>
+            </tr>
+            <tr>
+                <td class="text-center">+2</td>
+                <td class="text-center" ng-bind="::reviewer.scores['2']"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

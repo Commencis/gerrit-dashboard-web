@@ -3,8 +3,7 @@ var sourceList = [
     "module/common/**/*.js",
     "module/dashboard/module.js",
     "module/dashboard/dashboardController.js",
-    "module/stats/module.js",
-    "module/stats/statsController.js",
+    "module/stats/*.js",
     "module/footer/module.js",
     "module/footer/footerController.js"
 ];
