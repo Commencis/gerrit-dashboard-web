@@ -29,6 +29,22 @@ angular.module("gerritDashboard.stats").service("statsUtil",
                     }
                 });
             };
+
+            this.getFilterString = function(filter) {
+                var filterStr = "today";
+
+                if (filter === "THIS_WEEK") {
+                    filterStr = "this week";
+                } else if (filter === "THIS_MONTH") {
+                    filterStr = "this month";
+                } else if (filter === "LAST_30_DAYS") {
+                    filterStr = "the last 30 days";
+                } else if (filter === "LAST_6_MONTHS") {
+                    filterStr = "the last 6 months";
+                }
+
+                return filterStr;
+            }
         }
     ]
 );

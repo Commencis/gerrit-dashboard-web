@@ -9,9 +9,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="review in ::reviewer['projectReviews']">
-                <td ng-bind="::review.projectName"></td>
-                <td class="text-center" ng-bind="::review.reviewCount"></td>
+            <tr ng-repeat="review in reviewer['projectReviews']">
+                <td ng-bind="review.projectName"></td>
+                <td class="text-center" ng-bind="review.reviewCount"></td>
             </tr>
         </tbody>
     </table>
@@ -28,23 +28,23 @@
         <tbody>
             <tr>
                 <td class="text-center">-2</td>
-                <td class="text-center" ng-bind="::reviewer.scores['-2']"></td>
+                <td class="text-center" ng-bind="reviewer.scores['-2']"></td>
             </tr>
             <tr>
                 <td class="text-center">-1</td>
-                <td class="text-center" ng-bind="::reviewer.scores['-1']"></td>
+                <td class="text-center" ng-bind="reviewer.scores['-1']"></td>
             </tr>
             <tr>
                 <td class="text-center">-0</td>
-                <td class="text-center" ng-bind="::reviewer.scores['0']"></td>
+                <td class="text-center" ng-bind="reviewer.scores['0']"></td>
             </tr>
             <tr>
                 <td class="text-center">+1</td>
-                <td class="text-center" ng-bind="::reviewer.scores['1']"></td>
+                <td class="text-center" ng-bind="reviewer.scores['1']"></td>
             </tr>
             <tr>
                 <td class="text-center">+2</td>
-                <td class="text-center" ng-bind="::reviewer.scores['2']"></td>
+                <td class="text-center" ng-bind="reviewer.scores['2']"></td>
             </tr>
         </tbody>
     </table>

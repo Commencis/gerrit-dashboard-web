@@ -1,24 +1,24 @@
 <div class="projects-popup">
     <h4 class="text-center">Project Stats</h4>
 
-    <div ng-if="::(project.avgMergeTime || project.avgFirstReviewTime)">
+    <div ng-if="project.avgMergeTime || project.avgFirstReviewTime">
         <table class="small table table-condensed table-striped">
             <tbody>
-                <tr ng-if="::(project.avgMergeTime > 0)">
+                <tr ng-if="project.avgMergeTime > 0">
                     <th scope="row">Average Merge Time</th>
-                    <td class="text-right" ng-bind="::project.avgMergeTime"></td>
+                    <td class="text-right" ng-bind="project.avgMergeTime"></td>
                 </tr>
-                <tr ng-if="::(project.avgFirstReviewTime > 0)">
+                <tr ng-if="project.avgFirstReviewTime > 0">
                     <th scope="row">Average First Review Time</th>
-                    <td class="text-right" ng-bind="::project.avgFirstReviewTime"></td>
+                    <td class="text-right" ng-bind="project.avgFirstReviewTime"></td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="small text-center">(in seconds)</div>
+        <div class="small text-center">(for {{filter}}, in minutes)</div>
     </div>
 
-    <div class="small" ng-if="::!(project.avgMergeTime || project.avgFirstReviewTime)">
+    <div class="small" ng-if="!(project.avgMergeTime || project.avgFirstReviewTime)">
         No data at this time.
     </div>
 </div>

@@ -11,6 +11,7 @@ angular.module("gerritDashboard.stats").controller("statsController",
                     response.avgFirstReviewTime
                 );
 
+                $scope.filter = statsUtil.getFilterString();
                 $scope.stats = response;
             });
 
@@ -24,6 +25,7 @@ angular.module("gerritDashboard.stats").controller("statsController",
                         response.avgFirstReviewTime
                     );
 
+                    $scope.filter = statsUtil.getFilterString(filter);
                     $scope.stats = response;
                 })
             };
