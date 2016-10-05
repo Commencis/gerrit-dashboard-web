@@ -1,6 +1,7 @@
 # Gerrit Dashboard Web
 
 ![Travis CI Build Status](https://travis-ci.org/monitise-mea/gerrit-dashboard-web.svg)
+[![](https://images.microbadger.com/badges/image/monitise/gerritdashboard-web.svg)](https://microbadger.com/images/monitise/gerritdashboard-web "Get your own image badge on microbadger.com")
 
 Gerrit Dashboard Web project that shows metrics from [Gerrit Dashboard Server](https://github.com/monitise-mea/gerrit-dashboard-server).
 
