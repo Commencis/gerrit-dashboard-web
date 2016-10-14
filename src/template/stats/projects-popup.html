@@ -1,15 +1,15 @@
 <div class="projects-popup">
-    <h4 class="text-center">Project Stats</h4>
+    <h4 class="text-center"  i18n="project_stats"></h4>
 
     <div ng-if="project.avgMergeTime || project.avgFirstReviewTime">
         <table class="small table table-condensed table-striped">
             <tbody>
                 <tr ng-if="project.avgMergeTime > 0">
-                    <th scope="row">Average Merge Time</th>
+                    <th scope="row" i18n="average_merge_time"></th>
                     <td class="text-right" ng-bind="project.avgMergeTime"></td>
                 </tr>
                 <tr ng-if="project.avgFirstReviewTime > 0">
-                    <th scope="row">Average First Review Time</th>
+                    <th scope="row" i18n="average_first_review_time"></th>
                     <td class="text-right" ng-bind="project.avgFirstReviewTime"></td>
                 </tr>
             </tbody>

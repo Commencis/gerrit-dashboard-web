@@ -1,0 +1,1 @@
+angular.module("gerritDashboard.i18n", []);

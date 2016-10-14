@@ -4,20 +4,38 @@
         <div class="stat-navigate">
             <div class="btn-group btn-group-justified">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-success" ng-click="getStats('TODAY')">TODAY</button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success" ng-click="getStats('THIS_WEEK')">THIS WEEK</button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success" ng-click="getStats('THIS_MONTH')">THIS MONTH</button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success" ng-click="getStats('LAST_30_DAYS')">LAST 30 DAYS
+                    <button type="button"
+                            class="btn btn-success"
+                            ng-click="getStats('TODAY')"
+                            i18n="today">
                     </button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-success" ng-click="getStats('LAST_6_MONTHS')">LAST 6 MONTHS
+                    <button type="button"
+                            class="btn btn-success"
+                            ng-click="getStats('THIS_WEEK')"
+                            i18n="this_week">
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button type="button"
+                            class="btn btn-success"
+                            ng-click="getStats('THIS_MONTH')"
+                            i18n="this_month">
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button type="button"
+                            class="btn btn-success"
+                            ng-click="getStats('LAST_30_DAYS')"
+                            i18n="last_30_days">
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button type="button"
+                            class="btn btn-success"
+                            ng-click="getStats('LAST_6_MONTHS')"
+                            i18n="last_6_months">
                     </button>
                 </div>
             </div>
@@ -27,14 +45,14 @@
     <!-- Stats info -->
     <div class="row">
         <div class="number-of-commits col-md-12">
-            <h3>Number Of Commits <span class="badge" id="noc-span" ng-bind="stats.numberOfCommits"></span></h3>
+            <h3 i18n="number_of_commits"><span class="badge" id="noc-span" ng-bind="stats.numberOfCommits"></span></h3>
         </div>
     </div>
 
     <div class="row">
         <div class="stats-item col-md-4">
             <div class="stats">
-                <span class="stats-info">Most Committed Projects</span>
+                <span class="stats-info" i18n="most_committed_projects"></span>
                 <ul class="stats-list-wrapper list-group">
                     <li class="list-group-item" ng-repeat="project in stats['mostCommittedProjects']">
                         <span
@@ -51,7 +69,7 @@
         </div>
         <div class="stats-item col-md-4">
             <div class="stats">
-                <span class="stats-info">Top Committers</span>
+                <span class="stats-info" i18n="top_committers"></span>
                 <ul class="stats-list-wrapper list-group">
                     <li class="list-group-item" ng-repeat="committer in stats['topCommitters']">
                         <span ng-bind="committer.name"></span>
@@ -62,7 +80,7 @@
         </div>
         <div class="stats-item col-md-4">
             <div class="stats">
-                <span class="stats-info">Top Reviewers</span>
+                <span class="stats-info" i18n="top_reviewers"></span>
                 <ul class="stats-list-wrapper list-group">
                     <li class="list-group-item" ng-repeat="reviewer in stats['topReviewers']">
                         <span
